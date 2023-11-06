@@ -6,12 +6,11 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:00:46 by lmaume            #+#    #+#             */
-/*   Updated: 2023/11/01 12:36:20 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/11/06 13:01:32 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
@@ -24,4 +23,20 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	else
 		ft_memcpy(dest, src, n);
 	return (dest);
+}
+
+#include <stdio.h>
+#include <string.h>
+
+int	main(void)
+{
+	size_t	n = 12;
+	char	src[999] = "abcdefghijklmnopqrstuvwxyz";
+	char	dest[999] = "une sting";
+	char	dest2[999] = "une sting";
+
+	ft_memmove(dest, src, n);
+	memmove(dest2, src, n);
+	printf("%s\n%s\n", dest, dest2);
+	return (0);
 }

@@ -6,11 +6,11 @@
 #    By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 15:13:38 by lmaume            #+#    #+#              #
-#    Updated: 2023/11/06 15:29:41 by lmaume           ###   ########.fr        #
+#    Updated: 2023/11/07 14:46:14 by lmaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = makefile_uwu
+NAME = libft.a
 
 SRCS =	ft_isalpha.c \
 		ft_isdigit.c \
@@ -46,8 +46,6 @@ SRCS =	ft_isalpha.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c
 
-OBJS = $(SRCS : .c = .o)
-
 CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
@@ -56,17 +54,15 @@ LIB = -L. -libft
 
 RM = rm -f
 
-CLEAN = CLEAN
+OBJS = $(SRCS:.c=.o)
 
-all :
-	@make $(NAME)
+all : $(NAME)
 
 $(NAME) : $(OBJS)
 	$(CC) -o $(NAME) $(OBJS) $(LIB)
 
 clean : 
-	$(RM) $(NAME)
-	@$(CLEAN)
+	$(RM) $(OBJS)
 
 fclean : clean
 	$(RM) $(NAME)

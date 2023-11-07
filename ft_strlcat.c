@@ -6,7 +6,7 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 16:26:24 by lmaume            #+#    #+#             */
-/*   Updated: 2023/11/01 17:35:38 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/11/07 12:03:41 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	ft_strlcat(char *dst, char *src, size_t size)
 
 	i = 0;
 	if (src[i] < size)
-		while (size != 0)
+		while (size != 0 && src[i] != )
 		{
 			temp[i] = src[i];
 			i++;

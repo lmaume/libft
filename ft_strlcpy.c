@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/06 12:40:41 by lmaume            #+#    #+#             */
+/*   Updated: 2023/11/07 12:04:51 by lmaume           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
@@ -9,12 +20,12 @@ size_t	ft_strlcpy(char *dst, char *src, size_t size)
 	i = 0;
 	if (size > (size_t)ft_strlen(src))
 	{
-		while (src[i+1] != '\0' && i < size-1)
+		while (src[i + 1] != '\0' && i < size - 1)
 		{
 			dst[i] = src[i];
 			i++;
 		}
-		while (src[i] != '\0' && i < size-1)
+		while (src[i] != '\0' && i < size - 1)
 		{
 			dst[i] = src[i];
 			i++;

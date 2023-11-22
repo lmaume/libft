@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 16:26:24 by lmaume            #+#    #+#             */
-/*   Updated: 2023/11/20 20:08:11 by lmaume           ###   ########.fr       */
+/*   Created: 2023/11/08 15:20:18 by lmaume            #+#    #+#             */
+/*   Updated: 2023/11/22 16:21:37 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
-	size_t	j;
+	int		i;
 
 	i = 0;
-	j = 0;
-	while (dst[i] != '\0')
-		i++;
-	while (i < size - 1)
+	while (s[i] != (char)c && s[i] != '\0')
 	{
-		dst[i] = src[j];
 		i++;
-		j++;
 	}
-	dst[i] = '\0';
-	return (ft_strlen(dst));
+	if (s[i] == (char)c)
+		return ((char *)&s[i]);
+	else
+		return (NULL);
 }
+
+// int	main(void)
+// {
+// 	char	buffer1[] = "coprogram\0jesuiscacher";
+// 	char	*ptr;
+// 	int		ch = 'p';
+
+// 	ptr = strchr(buffer1, ch);
+// 	printf ("The first occurrence of %c in '%s' is '%s'\n", ch, buffer1, ptr);
+// }

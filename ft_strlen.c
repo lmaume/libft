@@ -6,11 +6,13 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 16:42:32 by lmaume            #+#    #+#             */
-/*   Updated: 2023/11/07 14:46:12 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/11/22 16:27:11 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
 	int	i;
 

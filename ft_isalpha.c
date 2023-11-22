@@ -6,14 +6,14 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:20:53 by lmaume            #+#    #+#             */
-/*   Updated: 2023/11/07 14:46:04 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/11/14 13:06:31 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int c)
 {
-	if ((unsigned char)c >= 'A' && c <= 'Z'
-		|| (unsigned char)c >= 'a' && c <= 'z')
+	if ((c >= 'A' && c <= 'Z')
+		|| (c >= 'a' && c <= 'z'))
 		return (1);
 	else
 		return (0);

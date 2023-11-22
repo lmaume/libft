@@ -6,7 +6,7 @@
 #    By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 15:13:38 by lmaume            #+#    #+#              #
-#    Updated: 2023/11/07 14:46:14 by lmaume           ###   ########.fr        #
+#    Updated: 2023/11/22 17:38:27 by lmaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,24 +29,25 @@ SRCS =	ft_isalpha.c \
 		ft_strchr.c \
 		ft_strrchr.c \
 		ft_strncmp.c \
-		ft_memcmp.c \
-		ft_strnstr.c \
-		ft_atoi.c \
-		ft_calloc.c \
-		ft_strdup.c \
-		ft_substr.c \
-		ft_strjoin.c\
-		ft_strtrim.c \
-		ft_split.c \
-		ft_itoa.c \
-		ft_strmapi.c \
-		ft_striteri.c \
-		ft_putchar_fd.c \
-		ft_putsrt_fd.c \
-		ft_putendl_fd.c \
-		ft_putnbr_fd.c
+		ft_memchr.c \
+#		ft_memcmp.c \
+#		ft_strnstr.c \
+#		ft_atoi.c \
+#		ft_calloc.c \
+#		ft_strdup.c \
+#		ft_substr.c \
+#		ft_strjoin.c\
+#		ft_strtrim.c \
+#		ft_split.c \
+#		ft_itoa.c \
+#		ft_strmapi.c \
+#		ft_striteri.c \
+#		ft_putchar_fd.c \
+#		ft_putsrt_fd.c \
+#		ft_putendl_fd.c \
+#		ft_putnbr_fd.c
 
-CC = gcc
+CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -57,9 +58,11 @@ RM = rm -f
 OBJS = $(SRCS:.c=.o)
 
 all : $(NAME)
-
+	
 $(NAME) : $(OBJS)
-	$(CC) -o $(NAME) $(OBJS) $(LIB)
+	ar -rc $(NAME) $(OBJS)
+
+#$(CC) -o $(NAME) $(OBJS) $(LIB)
 
 clean : 
 	$(RM) $(OBJS)

@@ -6,13 +6,13 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:03:59 by lmaume            #+#    #+#             */
-/*   Updated: 2023/11/07 14:46:06 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/11/13 14:32:36 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	if ((unsigned char)c >= 32 && (unsigned char)c <= 127)
+	if (c >= 32 && c < 127)
 		return (1);
 	else
 		return (0);

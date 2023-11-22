@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 16:26:24 by lmaume            #+#    #+#             */
-/*   Updated: 2023/11/20 20:08:11 by lmaume           ###   ########.fr       */
+/*   Created: 2023/11/16 16:22:51 by lmaume            #+#    #+#             */
+/*   Updated: 2023/11/17 15:19:52 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
+#include <ctype.h>
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+int	ft_toupper(int c)
 {
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	while (dst[i] != '\0')
-		i++;
-	while (i < size - 1)
-	{
-		dst[i] = src[j];
-		i++;
-		j++;
-	}
-	dst[i] = '\0';
-	return (ft_strlen(dst));
+	if (c >= 'a' && c <= 'z')
+		c = c - 32;
+	return (c);
 }

@@ -6,13 +6,13 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:00:59 by lmaume            #+#    #+#             */
-/*   Updated: 2023/11/07 14:46:05 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/11/14 13:06:21 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	if (((unsigned char)c >= 0) && ((unsigned char)c <= 127))
+	if (c >= 0 && c <= 127)
 		return (1);
 	else
 		return (0);

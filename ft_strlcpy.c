@@ -6,7 +6,7 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:40:41 by lmaume            #+#    #+#             */
-/*   Updated: 2023/11/22 17:46:31 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/11/23 17:47:34 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 			}
 			i++;
 		}
+		dst[j] = '\0';
 	}
-	dst[j] = '\0';
 	return (ft_strlen(src));
 }
 

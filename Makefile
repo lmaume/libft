@@ -6,7 +6,7 @@
 #    By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 15:13:38 by lmaume            #+#    #+#              #
-#    Updated: 2023/11/27 17:08:27 by lmaume           ###   ########.fr        #
+#    Updated: 2023/11/27 22:57:18 by lmaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,10 +31,10 @@ SRCS =	ft_isalpha.c \
 		ft_strncmp.c \
 		ft_memchr.c \
 		ft_memcmp.c \
-		ft_strnstr.c #\
-#		ft_atoi.c \
-#		ft_calloc.c \
-#		ft_strdup.c \
+		ft_strnstr.c \
+		ft_atoi.c \
+		ft_calloc.c \
+		ft_strdup.c #\
 #		ft_substr.c \
 #		ft_strjoin.c\
 #		ft_strtrim.c \

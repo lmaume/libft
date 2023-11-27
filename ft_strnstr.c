@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 17:17:18 by lmaume            #+#    #+#             */
-/*   Updated: 2023/11/27 17:03:46 by lmaume           ###   ########.fr       */
+/*   Created: 2023/11/27 17:07:51 by lmaume            #+#    #+#             */
+/*   Updated: 2023/11/27 17:50:30 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,28 @@
 #include <string.h>
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t				i;
-	const unsigned char	*str;
+	size_t	i;
+	size_t	j;
 
-	str = (const unsigned char *)s;
 	i = 0;
-	if (n == 0)
+	if (!*little)
+		return ((char *)big);
+	if (len <= 0 || !*big)
 		return (NULL);
-	while (str[i] != (unsigned char)c && i < n - 1)
+	while (i < len - 1)
 	{
+		j = 0;
+		while (i + j < len && big[i + j] == little[j] && little[j])
+		{
+			j++;
+			if (!little[j])
+				return ((char *)&big[i]);
+		}
 		i++;
 	}
-	if ((int)str[i] == (unsigned char)c)
-		return ((void *)(str + i));
-	else
+	if (!little[j])
 		return (NULL);
+	return (NULL);
 }

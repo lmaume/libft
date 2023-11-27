@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 17:17:18 by lmaume            #+#    #+#             */
-/*   Updated: 2023/11/27 17:03:46 by lmaume           ###   ########.fr       */
+/*   Created: 2023/11/24 15:55:15 by lmaume            #+#    #+#             */
+/*   Updated: 2023/11/27 16:52:07 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include <stdio.h>
 #include <string.h>
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t				i;
-	const unsigned char	*str;
+	size_t		i;
 
-	str = (const unsigned char *)s;
 	i = 0;
 	if (n == 0)
-		return (NULL);
-	while (str[i] != (unsigned char)c && i < n - 1)
+		return (0);
+	while (i < n - 1)
 	{
+		if (((unsigned char *)s1)[i] != ((unsigned char *)s2)[i])
+			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 		i++;
 	}
-	if ((int)str[i] == (unsigned char)c)
-		return ((void *)(str + i));
-	else
-		return (NULL);
+	return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 }

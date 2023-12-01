@@ -6,7 +6,7 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 14:27:44 by lmaume            #+#    #+#             */
-/*   Updated: 2023/11/29 16:30:39 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/12/01 19:51:04 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	sub = NULL;
-	if (!s || start >= ft_strlen(s))
+	if (!s)
+		return (NULL);
+	if (start >= ft_strlen(s))
 	{
 		sub = malloc(1);
 		sub[0] = '\0';

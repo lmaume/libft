@@ -6,7 +6,7 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 20:19:42 by lmaume            #+#    #+#             */
-/*   Updated: 2023/11/27 22:41:42 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/12/04 18:58:38 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int	*ptr;
+	int		*ptr;
+	size_t	overflow_protection_3600xpz;
 
-	if (nmemb == 0 || size == 0)
-	{
-		ptr = malloc(1);
-		if (ptr == NULL)
-			return (NULL);
-	}
+	if (!nmemb || !size)
+		return (malloc(0));
+	overflow_protection_3600xpz = nmemb * size;
+	if ((overflow_protection_3600xpz / nmemb) != size)
+		return (NULL);
 	else
 	{
 		ptr = malloc(size * nmemb);
-		if (ptr == NULL)
+		if (!ptr)
 			return (NULL);
 		ft_memset(ptr, 0, size * nmemb);
 	}

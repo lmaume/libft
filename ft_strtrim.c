@@ -6,7 +6,7 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 17:30:55 by lmaume            #+#    #+#             */
-/*   Updated: 2023/12/01 19:42:50 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/12/04 18:56:35 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (isset(s1[start], set))
 		start++;
 	if (s1[start] == '\0' || start == end)
-	{
-		s2 = malloc(1);
-		s2[0] = '\0';
-		return (s2);
-	}
+		return (s2 = malloc(1), s2[0] = '\0', s2);
 	while (isset(s1[end], set) && end >= 1)
 		end--;
 	len = ((end + 1) - start) + 1;
@@ -53,6 +49,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 	s2 = malloc(len);
 	if (!s2)
 		return (NULL);
-	ft_strlcpy(s2, &s1[start], len);
-	return (s2);
+	return (ft_strlcpy(s2, &s1[start], len), s2);
 }

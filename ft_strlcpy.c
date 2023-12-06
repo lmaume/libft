@@ -6,12 +6,10 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:40:41 by lmaume            #+#    #+#             */
-/*   Updated: 2023/11/23 17:47:34 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/12/06 16:27:50 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <string.h>
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)

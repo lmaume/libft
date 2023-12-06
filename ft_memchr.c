@@ -6,12 +6,10 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 17:17:18 by lmaume            #+#    #+#             */
-/*   Updated: 2023/11/27 17:03:46 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/12/06 16:26:47 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <string.h>
 #include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)

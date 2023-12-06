@@ -6,11 +6,10 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:32:48 by lmaume            #+#    #+#             */
-/*   Updated: 2023/12/01 19:19:55 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/12/06 16:27:39 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include <stdlib.h>
 #include "libft.h"
 

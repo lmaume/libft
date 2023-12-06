@@ -6,11 +6,11 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:36:23 by lmaume            #+#    #+#             */
-/*   Updated: 2023/11/17 18:13:15 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/12/06 16:26:03 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

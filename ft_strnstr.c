@@ -6,12 +6,10 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 17:07:51 by lmaume            #+#    #+#             */
-/*   Updated: 2023/11/27 19:17:32 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/12/06 16:28:02 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <string.h>
 #include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)

@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 12:00:29 by lmaume            #+#    #+#             */
-/*   Updated: 2023/12/06 16:26:59 by lmaume           ###   ########.fr       */
+/*   Created: 2023/12/06 17:02:16 by lmaume            #+#    #+#             */
+/*   Updated: 2023/12/06 17:38:14 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
+	char	*c;
+	int		i;
 
 	i = 0;
-	if (!dest && !src)
-		return (NULL);
-	while (i < n)
+	c = NULL;
+	if (n < 10)
+		c[i] = n + '0';
+	while (n >= 10)
 	{
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		c[i] = (n / 10 + '0');
 		i++;
+		c[i] = (n % 10 + '0');
 	}
-	return (dest);
+	ft_putstr_fd(c, fd);
+}
+
+int main(void)
+{
+	int fd = 1;
+	int n = 18;
+	ft_putnbr_fd(n, fd);
 }

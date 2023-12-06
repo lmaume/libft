@@ -6,7 +6,7 @@
 #    By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 15:13:38 by lmaume            #+#    #+#              #
-#    Updated: 2023/12/01 19:21:21 by lmaume           ###   ########.fr        #
+#    Updated: 2023/12/06 17:04:03 by lmaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,14 +38,14 @@ SRCS =	ft_isalpha.c \
 		ft_substr.c \
 		ft_strjoin.c\
 		ft_strtrim.c \
-#s		ft_split.c \
-#		ft_itoa.c \
-#		ft_strmapi.c \
-#		ft_striteri.c \
-#		ft_putchar_fd.c \
-#		ft_putsrt_fd.c \
-#		ft_putendl_fd.c \
-#		ft_putnbr_fd.c
+		ft_putchar_fd.c \
+		ft_putstr_fd.c \
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c
+#		ft_split.c \
+		ft_itoa.c \
+		ft_strmapi.c \
+		ft_striteri.c \#
 
 CC = cc
 

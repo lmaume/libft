@@ -6,13 +6,10 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 15:55:15 by lmaume            #+#    #+#             */
-/*   Updated: 2023/11/27 16:52:07 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/12/06 16:26:54 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)

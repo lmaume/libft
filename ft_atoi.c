@@ -6,11 +6,10 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 19:30:09 by lmaume            #+#    #+#             */
-/*   Updated: 2023/11/27 20:21:12 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/12/06 16:25:47 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
 
 int	ft_atoi(const char *nptr)

@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 17:02:16 by lmaume            #+#    #+#             */
-/*   Updated: 2023/12/07 20:14:56 by lmaume           ###   ########.fr       */
+/*   Created: 2023/12/08 17:04:18 by lmaume            #+#    #+#             */
+/*   Updated: 2023/12/08 18:00:34 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+char	*ft_itoa(int n)
 {
-	char	s;
+	char			*str;
+	unsigned int	i;
 
+	i = 0;
+	str = ft_calloc(12);
+	if (!str)
+		return (NULL);
 	if (n < 0)
 	{
-		write(fd, "-", 1);
+		str[0] = '-';
 		if (n == -2147483648)
 		{
-			write(fd, "2147483648", 10);
-			return ;
+			&str(1) = "2147483648";
+			return (str);
 		}
-		n = n * -1;
+		n *= -1;
 	}
-	if (n >= 10)
-		ft_putnbr_fd(n / 10, fd);
-	s = ((n % 10) + '0');
-	write(fd, &s, 1);
+	while (str[i])
+	{
+		str[i] = (n % 10) + '0';
+		i++;
+		n = n/ 10;
+	}
+	return (str);
 }

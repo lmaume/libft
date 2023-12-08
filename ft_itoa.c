@@ -6,7 +6,7 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 17:04:18 by lmaume            #+#    #+#             */
-/*   Updated: 2023/12/08 18:00:34 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/12/08 19:11:21 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,32 @@
 
 char	*ft_itoa(int n)
 {
-	char			*str;
-	unsigned int	i;
+	char	*str;
+	int		temp;
+	int		sign;
+	int		len;
 
 	i = 0;
-	str = ft_calloc(12);
-	if (!str)
-		return (NULL);
+	sign = 0;
+	while (temp != 0)
+	{
+		len++;
+		temp /= 10;
+	}
 	if (n < 0)
 	{
-		str[0] = '-';
 		if (n == -2147483648)
-		{
-			&str(1) = "2147483648";
-			return (str);
-		}
+			return (ft_strdup("-2147483648"));
+		sign = 1;
+		str[0] = '-';
 		n *= -1;
 	}
-	while (str[i])
+	str = ft_calloc((len + sign) + 1, 1);
+	if (!str)
+		return (NULL);
+	while (len >= sign)
 	{
-		str[i] = (n % 10) + '0';
-		i++;
-		n = n/ 10;
+		str[len] = (n % 10) + '0';
 	}
 	return (str);
 }

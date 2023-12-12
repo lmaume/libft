@@ -6,10 +6,11 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 16:26:24 by lmaume            #+#    #+#             */
-/*   Updated: 2023/12/06 16:27:45 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/12/12 21:34:23 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)

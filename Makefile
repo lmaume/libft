@@ -6,7 +6,7 @@
 #    By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 15:13:38 by lmaume            #+#    #+#              #
-#    Updated: 2023/12/12 19:17:59 by lmaume           ###   ########.fr        #
+#    Updated: 2023/12/13 16:46:46 by lmaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,18 +62,10 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	ar -rc $(NAME) $(OBJS)
 
-#$(CC) -o $(NAME) $(OBJS) $(LIB)
-
 clean : 
 	$(RM) $(OBJS)
 
 fclean : clean
 	$(RM) $(NAME)
-
-main: all
-	gcc main.c $(NAME)
-
-exe: main
-	./a.out
 
 re : fclean all

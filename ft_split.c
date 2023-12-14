@@ -6,14 +6,22 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:42:33 by lmaume            #+#    #+#             */
-/*   Updated: 2023/12/13 19:08:42 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/12/14 16:12:01 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 #include <stdlib.h>
 #include "libft.h"
+
+static
+void	smite(char **tab)
+{
+	while (*tab != NULL)
+	{
+		free(*tab);
+		tab++;
+	}
+}
 
 static
 int	wordcount(char const *s, char c)
@@ -32,20 +40,17 @@ int	wordcount(char const *s, char c)
 		while (s[i] != c && s[i] != '\0')
 			i++;
 	}
-	printf("%zu\n", count);
 	return (count);
 }
 
 static
-void	fill_tab(char const *s, char c, char **tab)
+char	**fill_tab(char const *s, char c, char **tab)
 {
 	size_t	i;
 	size_t	j;
-	size_t	k;
-	
+
 	i = 0;
 	j = 0;
-	k = 0;
 	while (s[i] != '\0')
 	{
 		while (s[i] == c)
@@ -53,12 +58,18 @@ void	fill_tab(char const *s, char c, char **tab)
 		j = i;
 		while (s[j] != c && s[j] != '\0')
 			j++;
-		char *sub = ft_substr(s, i, (j - i));
-		tab[k] = sub;
-		k++;
+		*tab = ft_substr(s, i, (j - i));
+		if (!*tab)
+		{
+			smite(tab);
+			free(tab);
+			return (NULL);
+		}
+		tab++;
 		i = j;
 	}
-	tab[k] = NULL;
+	*tab = NULL;
+	return (tab);
 }
 
 char	**ft_split(char const *s, char c)
@@ -70,23 +81,7 @@ char	**ft_split(char const *s, char c)
 	tab = ft_calloc(wordcount(s, c) + 1, sizeof(char *));
 	if (!tab)
 		return (NULL);
-	fill_tab(s, c, tab);
+	if (fill_tab(s, c, tab) == NULL)
+		return (NULL);
 	return (tab);
 }
-
-// int	main(void)
-// {
-// 	int		k;
-// 	char	str[] = "      ";
-// 	char	c = ' ';
-// 	char	**tab = ft_split(str, c);
-
-// 	k = 0;
-// 	while (tab[k] != NULL)
-// 	{
-// 		printf("%s\n", tab[k]);
-// 		free(tab[k]);
-// 		k++;
-// 	}
-// 	free(tab);
-// }

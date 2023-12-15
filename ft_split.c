@@ -6,9 +6,11 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:42:33 by lmaume            #+#    #+#             */
-/*   Updated: 2023/12/14 16:12:01 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/12/15 17:15:42 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 #include <stdlib.h>
 #include "libft.h"
@@ -16,11 +18,17 @@
 static
 void	smite(char **tab)
 {
+	char	**tab_start;
+
+	tab_start = tab;
+	if (tab == NULL)
+		return ;
 	while (*tab != NULL)
 	{
 		free(*tab);
 		tab++;
 	}
+	free(tab_start);
 }
 
 static
@@ -44,7 +52,7 @@ int	wordcount(char const *s, char c)
 }
 
 static
-char	**fill_tab(char const *s, char c, char **tab)
+char	**fill_tab(char const *s, char c, char **tab, char **tab_start)
 {
 	size_t	i;
 	size_t	j;
@@ -58,11 +66,12 @@ char	**fill_tab(char const *s, char c, char **tab)
 		j = i;
 		while (s[j] != c && s[j] != '\0')
 			j++;
+		if (i == j)
+			break ;
 		*tab = ft_substr(s, i, (j - i));
 		if (!*tab)
 		{
-			smite(tab);
-			free(tab);
+			smite(tab_start);
 			return (NULL);
 		}
 		tab++;
@@ -80,8 +89,23 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	tab = ft_calloc(wordcount(s, c) + 1, sizeof(char *));
 	if (!tab)
+	{
+		smite(tab);
 		return (NULL);
-	if (fill_tab(s, c, tab) == NULL)
+	}
+	if (fill_tab(s, c, tab, tab) == NULL)
 		return (NULL);
 	return (tab);
 }
+
+// int	main(void)
+// {
+// 	char	**tab;
+
+// 	tab = ft_split("\t\t\t\thello!\t\t\t\t", '\t');
+// 	while (*tab != NULL)
+// 	{
+// 		printf("%s\n", *tab);
+// 		tab++;
+// 	}
+// }

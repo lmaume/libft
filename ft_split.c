@@ -6,7 +6,7 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:42:33 by lmaume            #+#    #+#             */
-/*   Updated: 2023/12/15 17:15:42 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/12/15 17:42:26 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,15 +97,3 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (tab);
 }
-
-// int	main(void)
-// {
-// 	char	**tab;
-
-// 	tab = ft_split("\t\t\t\thello!\t\t\t\t", '\t');
-// 	while (*tab != NULL)
-// 	{
-// 		printf("%s\n", *tab);
-// 		tab++;
-// 	}
-// }

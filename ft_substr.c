@@ -6,7 +6,7 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 14:27:44 by lmaume            #+#    #+#             */
-/*   Updated: 2023/12/12 21:28:22 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/12/15 17:54:22 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		sub = ft_calloc(len + 1, 1);
 	if (!sub)
 		return (NULL);
-	return (ft_strlcpy(sub, &s[start], len + 1), sub);
+	ft_strlcpy(sub, &s[start], len + 1);
+	return (sub);
 }

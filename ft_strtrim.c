@@ -6,7 +6,7 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 17:30:55 by lmaume            #+#    #+#             */
-/*   Updated: 2023/12/15 17:25:26 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/12/15 17:53:17 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	s2 = malloc(len);
 	if (!s2)
 		return (NULL);
-	return (ft_strlcpy(s2, &s1[start], len), s2);
+	ft_strlcpy(s2, &s1[start], len);
+	return (s2);
 }

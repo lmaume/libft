@@ -6,7 +6,7 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:24:16 by lmaume            #+#    #+#             */
-/*   Updated: 2023/12/06 17:00:55 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/12/20 19:55:02 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (fd > 0 && s)
+	if (fd >= 0 && s)
 	{
 		write(fd, s, ft_strlen(s));
 	}

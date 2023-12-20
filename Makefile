@@ -6,7 +6,7 @@
 #    By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 15:13:38 by lmaume            #+#    #+#              #
-#    Updated: 2023/12/15 18:01:06 by lmaume           ###   ########.fr        #
+#    Updated: 2023/12/20 15:55:39 by lmaume           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,8 +51,6 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-LIB = -L. -libft
-
 RM = rm -f
 
 OBJS = $(SRCS:.c=.o)
@@ -69,3 +67,5 @@ fclean : clean
 	$(RM) $(NAME)
 
 re : fclean all
+
+#include "libft.h"

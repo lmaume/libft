@@ -6,7 +6,7 @@
 /*   By: lmaume <lmaume@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 16:16:32 by lmaume            #+#    #+#             */
-/*   Updated: 2023/12/08 17:02:14 by lmaume           ###   ########.fr       */
+/*   Updated: 2023/12/20 15:10:33 by lmaume           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 
 	i = 0;
-	if (!s && f)
+	if (!s || !f)
 		return (NULL);
 	str = ft_calloc(ft_strlen(s) + 1, 1);
 	if (!str)
